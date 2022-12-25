@@ -9,6 +9,15 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
+  void initState() {
+    Timer(
+      Duration(seconds: 4),
+      () => Navigator.pushNamed(context, '/welcome-page'),
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
@@ -16,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             colors: [
               Colors.black,
               Colors.black,
@@ -30,10 +39,11 @@ class _SplashPageState extends State<SplashPage> {
             Column(
               children: [
                 Image.asset(
-                  'assets/logo-pijak-remove.png',
+                  'assets/quiz-remove.png',
                   height: 300.0,
                   width: 300.0,
                 ),
+                // ignore: prefer_const_constructors
                 SizedBox(height: 20),
                 const CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
@@ -51,31 +61,6 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               ],
             ),
-
-            ///[FOOTER]
-            // Column(
-            //   children: [
-            //     Text(
-            //       'pijak sepatoe'.toUpperCase(),
-            //       style: GoogleFonts.poppins(
-            //         color: Colors.white,
-            //         fontWeight: FontWeight.bold,
-            //         fontSize: 12,
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       height: 10,
-            //     ),
-            //     // Text(
-            //     //   'welcome and happy shop your shoes'.toUpperCase(),
-            //     //   style: GoogleFonts.poppins(
-            //     //     color: Colors.white,
-            //     //     fontSize: 12,
-            //     //     fontWeight: FontWeight.bold,
-            //     //   ),
-            //     // ),
-            //   ],
-            // ),
           ],
         ),
       ),
